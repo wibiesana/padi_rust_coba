@@ -3,6 +3,8 @@ use padi_core::prelude::*;
 mod auth;
 mod site;
 mod users;
+mod posts;
+mod comments;
 
 /// Main API router combining public, auth, and resource endpoints.
 pub fn api() -> Router {
@@ -10,4 +12,6 @@ pub fn api() -> Router {
         .merge(site::routes())
         .nest("/auth", auth::routes())
         .nest("/users", users::routes())
+        .nest("/posts", posts::routes())
+        .nest("/comments", comments::routes())
 }
