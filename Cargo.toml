@@ -1,0 +1,13 @@
+[package]
+name = "padi_rust"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+padi_core = { git = "https://github.com/wibiesana/padi_rust_core.git", branch = "main" }
+tokio = { version = "1", features = ["rt-multi-thread", "macros"] }
+
+[patch."https://github.com/wibiesana/padi_rust_core.git"]
+padi_core = { path = "../padi_rust_core" }
+
+[workspace]
